@@ -113,66 +113,26 @@ int bounce(int pin){
 }
 
 int checkAnswer(int isTRUE, int isFALSE, int questionNumber){
-  //tempaskldsajdasdjas;ldkasdkaskd;a;kdlsa
-
-  //tempaslkdnasdsadasdjlaskdaskdaslkdasjdksajdkasdjka;sdsa
    if((isTRUE==HIGH)&&(questionNumber>4)){
       Serial.println("MISTAKE" );
       digitalWrite(ledPinNo, HIGH);
       delay(200);
-
-        Serial.println(isTRUE);
-     Serial.println(isFALSE);
-  Serial.println(questionNumber);
-
-      
       return 0;
+      
    }else if((isTRUE==HIGH)&&(questionNumber>=0)){
       Serial.println("Congratz, 1 point for you");
       digitalWrite(ledPinYes, HIGH);
       delay(200);
-
-
-
-
-        Serial.println(isTRUE);
-  Serial.println(isFALSE);
-  Serial.println(questionNumber);
-
-
-
-
-  
       return 1;
    }else if((isFALSE==HIGH)&&(questionNumber>4)){
       Serial.println("Congrats, 1 point for you");
       digitalWrite(ledPinYes, HIGH);
       delay(200);
-
-
-
-
-        Serial.println(isTRUE);
-  Serial.println(isFALSE);
-  Serial.println(questionNumber);
-
-
-
-  
       return 1;
-   }else if((isFALSE==HIGH)&&(questionNumber>0)){
+   }else if((isFALSE==HIGH)&&(questionNumber>=0)){
       Serial.println("MISTAKE" );      
       digitalWrite(ledPinNo, HIGH);
       delay(200);
-
-
-
-        Serial.println(isTRUE);
-  Serial.println(isFALSE);
-  Serial.println(questionNumber);
-
-
-  
       return 0;
    }
    return 0;
